@@ -13,6 +13,9 @@ console.log(process.env);
 // ahora sí aparece "SECRET_KEY"
 // si quiero meter nuevas environment variables tengo que restart el servidor
 
+app.get('/', (req, res) => {
+  res.send('<h1>Hello Render! Server is running<h1/>');
+});
 app.get('/weather', async (req, res) => {
   // proxy server
   // aquí no podemos usar fetch (porque eso viene del objeto windows. Se supone que fetch sí aparece desde la versión 18)
